@@ -52,13 +52,13 @@ def dealCards(num_players, num_cards_per_player, the_deck):
 
 def card_ranks(hand):
 #find the rank of cards
-    ranks = ['--23456789TJQKA'.index(r) for r, s, prettyboi in hand]
+    ranks = ['--23456789TJQKA'.index(r) for r, s, c in hand]
     ranks.sort(reverse = True)
     return [5, 4, 3, 2, 1] if (ranks == [14, 5, 4, 3, 2]) else ranks
 
 def flush(hand):
 #True if player has flush
-    suits = [s for r, s, prettyboi in hand]
+    suits = [s for r, s, c in hand]
     return len(set(suits)) == 1
 
 def straight(ranks):
